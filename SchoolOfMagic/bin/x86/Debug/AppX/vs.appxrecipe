@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SHILA</Machine>
+    <WindowsUser>Felix</WindowsUser>
+    <SolutionConfiguration>Debug|x86</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <RegisteredManifestChecksum>313EAAC2A417F725D57443ADCB59B9258C21D94C51F00F2BE02A1DA180620FAE</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>3a7f6175-b7b2-4938-9428-660b6f508850_1.0.0.0_x86__x1c0ehdy3myjw</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>3a7f6175-b7b2-4938-9428-660b6f508850_x1c0ehdy3myjw!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>3a7f6175-b7b2-4938-9428-660b6f508850</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Felix</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-08-19T03:30:30.536</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\SchoolOfMagic.exe">
+      <PackagePath>SchoolOfMagic.exe</PackagePath>
+      <Modified>2012-08-19T04:49:41.026</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\SchoolOfMagic.pdb">
+      <PackagePath>SchoolOfMagic.pdb</PackagePath>
+      <Modified>2012-08-19T04:49:40.982</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\MathNumericsStripped\bin\x86\Debug\MathNumericsStripped.pdb">
+      <PackagePath>MathNumericsStripped.pdb</PackagePath>
+      <Modified>2012-08-19T03:14:47.901</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.pdb">
+      <PackagePath>RecognitionLibrary.pdb</PackagePath>
+      <Modified>2012-08-19T04:49:40.097</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\MathNumericsStripped\bin\x86\Debug\MathNumericsStripped.dll">
+      <PackagePath>MathNumericsStripped.dll</PackagePath>
+      <Modified>2012-08-19T03:14:47.944</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.dll">
+      <PackagePath>RecognitionLibrary.dll</PackagePath>
+      <Modified>2012-08-19T04:49:40.138</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\Assets\Logo.png">
+      <PackagePath>Assets\Logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-15T18:42:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\Assets\SmallLogo.png">
+      <PackagePath>Assets\SmallLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-15T18:42:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\Assets\SplashScreen.png">
+      <PackagePath>Assets\SplashScreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-15T18:42:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-15T18:42:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\img\pixel.png">
+      <PackagePath>img\pixel.png</PackagePath>
+      <Modified>2012-08-19T03:30:16.629</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\img\star.png">
+      <PackagePath>img\star.png</PackagePath>
+      <Modified>2012-08-18T23:24:41.407</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\App.xaml">
+      <PackagePath>App.xaml</PackagePath>
+      <Modified>2012-08-18T20:43:56.623</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\Common\StandardStyles.xaml">
+      <PackagePath>Common\StandardStyles.xaml</PackagePath>
+      <Modified>2012-06-26T14:19:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\MainPage.xaml">
+      <PackagePath>MainPage.xaml</PackagePath>
+      <Modified>2012-08-19T03:30:46.510</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2012-08-19T03:30:30.330</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
