@@ -203,9 +203,8 @@ namespace RecognitionLib.ANN
             weights1 += dw.Multiply(eta).Multiply(1 + DataManipulation.rand(1, 1)[0, 0] / 1000f);
             weights2 += dv.Multiply(eta).Multiply(1 + DataManipulation.rand(1, 1)[0, 0] / 1000f);
 
-            Matrix e1 = (net_out.Sign() - targets).Multiply(0.5f).Multiply(new DenseMatrix(net_out.ColumnCount, 1, 1.0f)).Transpose().Multiply(new DenseMatrix(net_out.RowCount, 1, 1.0f));
-            double e = e1[0, 0];
-            e = e;
+           // Matrix e1 = (net_out.Sign() - targets).Multiply(0.5f).Multiply(new DenseMatrix(net_out.ColumnCount, 1, 1.0f)).Transpose().Multiply(new DenseMatrix(net_out.RowCount, 1, 1.0f));
+           // double error = e1[0, 0];
         }
 
         /// <summary>

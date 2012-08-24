@@ -112,7 +112,9 @@
     <Compile Include="MatrixInputData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recognition.cs" />
+    <Compile Include="TrainSet.cs" />
     <Compile Include="StringInputData.cs" />
+    <Compile Include="TrainData.cs" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

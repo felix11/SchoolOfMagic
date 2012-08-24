@@ -41,7 +41,7 @@ namespace SchoolOfMagic
         private int trainCounter = 3;
         private List<MatrixInputData> currentTrainingData = new List<MatrixInputData>();
         private List<Point> currentTrainingPoints = new List<Point>();
-        private ObservableCollection<Spell> trained_spells = new ObservableCollection<Spell>();
+        private ObservableCollection<TrainSet> trained_spells = new ObservableCollection<TrainSet>();
         private Recognition recognition;
 
         private const double MIN_DIST = 5.0;
@@ -172,7 +172,7 @@ namespace SchoolOfMagic
                     isTraining = false;
                     newSpellNameTextBox.IsEnabled = true;
                     //DrawVec(aid.Value);
-                    trained_spells.Add(new Spell(newSpellNameTextBox.Text, currentTrainingData));
+                    trained_spells.Add(new TrainSet(newSpellNameTextBox.Text, currentTrainingData));
                     todoTextBlock.Text = "Congrats. You created a new spell.";
                 }
                 else
@@ -269,9 +269,9 @@ namespace SchoolOfMagic
             TrainData td = TrainData.FromString(text);
 
             // deserialize the data
-            trained_spells = td.Trained_Spells;
+            trained_spells = td.Trained_Sets;
             recognition = new Recognition(INPUT_WIDTH * INPUT_HEIGHT, trained_spells.Count);
-            recognition.setWeights(td.Weights.Item1, td.Weights.Item2);
+            recognition.setWeights(td.NeuralNet.Item1, td.NeuralNet.Item2);
         }
 
         private void newSpellButton_Click(object sender, RoutedEventArgs e)

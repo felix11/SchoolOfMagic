@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolOfMagic
+namespace RecognitionLib
 {
-    public class Spell
+    public class TrainSet
     {
         public string Name { get; set; }
         public List<MatrixInputData> TrainData { get; set; }
 
-        public Spell(string name, List<MatrixInputData> trainData)
+        public TrainSet(string name, List<MatrixInputData> trainData)
         {
             Name = name;
             TrainData = new List<MatrixInputData>();
@@ -35,13 +35,13 @@ namespace SchoolOfMagic
             return sb.ToString();
         }
 
-        public static Spell FromString(string str)
+        public static TrainSet FromString(string str)
         {
             string[] lines = str.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
             string name = lines[0];
             List<MatrixInputData> trainData = new List<MatrixInputData>();
 
-            // generate spell
+            // generate set
             for (int i = 1; i < lines.Length; i++)
             {
                 string[] mid = lines[i].Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
@@ -50,7 +50,7 @@ namespace SchoolOfMagic
                 trainData.Add(new MatrixInputData(mid_name, mat));
             }
 
-            return new Spell(name, trainData);
+            return new TrainSet(name, trainData);
         }
     }
 }
