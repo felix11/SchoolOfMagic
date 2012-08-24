@@ -16,3 +16,17 @@ c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\RecognitionLi
 c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\layout.resfiles.intermediate
 c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\resources.resfiles.intermediate
 c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.dll
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.pdb
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.pri
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\MathNumericsStripped.dll
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\MathNumericsStripped.pdb
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\MathNumericsStripped.pri
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\RecognitionLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\RecognitionLibrary.dll
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\RecognitionLibrary.pdb
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\priconfig.xml
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\layout.resfiles
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\resources.resfiles
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\pri.resfiles
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\obj\x86\Debug\LanguageQualifiers.txt

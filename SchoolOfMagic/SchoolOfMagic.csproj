@@ -131,6 +131,7 @@
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
+    <Content Include="img\star_red.png" />
     <Content Include="img\pixel.png" />
     <Content Include="img\star.png" />
   </ItemGroup>

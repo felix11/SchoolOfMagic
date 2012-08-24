@@ -8,15 +8,16 @@ namespace MathNumericsStripped
 {
     public class DenseMatrix : Matrix
     {
-        public DenseMatrix(int width, int height) : base (width, height)
+        public DenseMatrix(int height, int width)
+            : base(height, width)
         {
         }
-        public DenseMatrix(int width, int height, float val)
-            : base(width, height, val)
+        public DenseMatrix(int height, int width, float val)
+            : base(height, width, val)
         {
         }
-        public DenseMatrix(int width, int height, float[] val)
-            : base(width, height, val)
+        public DenseMatrix(int height, int width, float[] val)
+            : base(height, width, val)
         {
         }
     }

@@ -32,18 +32,20 @@ namespace SchoolOfMagic
         private bool isTraining = false;
         private bool isTesting = false;
         private Color backgroundColor = Color.FromArgb(255, 0, 0, 0);
-        private List<Point> lastPoints = new List<Point>();
         private List<Rectangle> drawnRectangles = new List<Rectangle>();
-        private double minDist = 5.0;
         private Image star;
-        private int trainCounter = 5;
+        private Image star_red;
+        private int trainCounter = 3;
         private List<MatrixInputData> currentTrainingData = new List<MatrixInputData>();
         private List<Point> currentTrainingPoints = new List<Point>();
-        private int INPUT_WIDTH = 100;
-        private int INPUT_HEIGHT = 100;
-        private int MAX_SPELLS = 15;
         private ObservableCollection<Spell> trained_spells = new ObservableCollection<Spell>();
         private Recognition recognition;
+
+        private const double MIN_DIST = 5.0;
+        private const int MAX_SPELLS = 15;
+        private const int INPUT_WIDTH = 25;
+        private const int INPUT_HEIGHT = 25;
+        private const int START_TRAIN_COUNTER = 6;
 
         public MainPage()
         {
@@ -51,6 +53,12 @@ namespace SchoolOfMagic
             star.Source = new BitmapImage(new Uri("ms-appx:///img/star.png"));
             star.Height = 25;
             star.Width = 25;
+
+            star_red = new Image();
+            star_red.Source = new BitmapImage(new Uri("ms-appx:///img/star_red.png"));
+            star_red.Height = 25;
+            star_red.Width = 25;
+
             this.InitializeComponent();
             this.DataContext = trained_spells;
         }
@@ -64,70 +72,54 @@ namespace SchoolOfMagic
         {
         }
 
+        private Point lastPoint = new Point(0,0);
+
         private void Grid_PointerMoved_1(object sender, PointerRoutedEventArgs e)
         {
             if (isDrawing)
             {
                 var p = e.GetCurrentPoint(canvas).Position;
-                lastPoints.Add(new Point(p.X, p.Y));
-                if (lastPoints.Count > 10)
-                    lastPoints.RemoveRange(0, lastPoints.Count - 10);
 
-                if (lastPoints.Count > 1)
+                if (dist(p, lastPoint) > MIN_DIST)
                 {
-                    DrawCurve(lastPoints.ToArray());
+                    Point newP = new Point(p.X * INPUT_WIDTH / canvas.Width, p.Y * INPUT_HEIGHT / canvas.Height);
+                    currentTrainingPoints.Add(newP);
+                    DrawCurve(p, lastPoint);
+                    lastPoint = p;
                 }
             }
         }
 
-        private void DrawRect(int x, int y, bool add = true)
+        private void DrawRect(int x, int y, bool yellow_star = true)
         {
             Rectangle newStar = new Rectangle();
             newStar.Height = star.Height;
             newStar.Width = star.Width;
             // Create an ImageBrush
             ImageBrush imgBrush = new ImageBrush();
-            imgBrush.ImageSource = star.Source;
+            if(yellow_star)
+                imgBrush.ImageSource = star.Source;
+            else
+                imgBrush.ImageSource = star_red.Source;
 
             // Fill rectangle with an ImageBrush
             newStar.Fill = imgBrush;
             newStar.Margin = new Thickness(x-star.Width/2, y-star.Height/2, 0, 0);
             canvas.Children.Add(newStar);
-            if(add)
+            if (yellow_star)
                 drawnRectangles.Add(newStar);
         }
 
-        private void DrawCurve(Point[] points)
+        private void DrawCurve(Point p1, Point p2)
         {
-            //DrawRect((int)points[0].X, (int)points[0].Y);
-            /*
-            Point p;
-            Point lastP;
-            int N = 10; // maximum interpolation points
+            int N = (int)(dist(p1,p2)/MIN_DIST); // maximum interpolation points
 
-            lastP = points[0];
-            for (int i = 0; i < points.Length-1; i++)
+            for (int k = 0; k <= N; k++)
             {
-                for (int k = 0; k <= N; k++)
-                {
-                    double f = (double)k/N;
+                double f = (double)k/N;
 
-                    p = new Point(points[i].X + f * (points[i + 1].X - points[i].X), lastP.Y + f * (points[i + 1].Y - points[i].Y));
-                    if (dist(p, lastP) > minDist)
-                    {
-                        lastP = p;
-                        DrawRect((int)p.X, (int)p.Y);
-                        Point newP = new Point(p.X * INPUT_WIDTH / canvas.Width, p.Y * INPUT_HEIGHT / canvas.Height);
-                        currentTrainingPoints.Add(newP);
-                    }
-                }
-            }
-             */
-            foreach (Point p in points)
-            {
+                Point p = new Point(p1.X + f * (p2.X - p1.X), p1.Y + f * (p2.Y - p1.Y));
                 DrawRect((int)p.X, (int)p.Y);
-                Point newP = new Point(p.X * INPUT_WIDTH / canvas.Width, p.Y * INPUT_HEIGHT / canvas.Height);
-                currentTrainingPoints.Add(newP);
             }
         }
 
@@ -148,8 +140,8 @@ namespace SchoolOfMagic
         private void Grid_PointerPressed_1(object sender, PointerRoutedEventArgs e)
         {
             // TODO: check if pointer was pressed for a longer time
-            lastPoints.Clear();
             isDrawing = true;
+            lastPoint = e.GetCurrentPoint(canvas).Position;
         }
 
         private void removeRects()
@@ -175,6 +167,7 @@ namespace SchoolOfMagic
                 {
                     isTraining = false;
                     newSpellNameTextBox.IsEnabled = true;
+                    //DrawVec(aid.Value);
                     trained_spells.Add(new Spell(newSpellNameTextBox.Text, currentTrainingData));
                     todoTextBlock.Text = "Congrats. You created a new spell.";
                 }
@@ -206,8 +199,8 @@ namespace SchoolOfMagic
                 {
                     todoTextBlock.Text = "No spell was recognized.";
                 }
+                newSpellButton.IsEnabled = true;
             }
-            lastPoints.Clear();
             removeRects();
             isDrawing = false;
         }
@@ -221,13 +214,12 @@ namespace SchoolOfMagic
         {
             if (!isTraining)
             {
-                trainCounter = 5;
+                trainCounter = START_TRAIN_COUNTER;
                 todoTextBlock.Text = "train your spell. Trainings left: " + trainCounter;
                 isTraining = true;
                 newSpellNameTextBox.IsEnabled = false;
                 currentTrainingData.Clear();
                 currentTrainingPoints.Clear();
-                lastPoints.Clear();
             }
             else
             {
@@ -256,9 +248,9 @@ namespace SchoolOfMagic
             List<ArrayInputData> trainData = new List<ArrayInputData>();
             for (int i = 0; i < trained_spells.Count; i++)
             {
-                DenseVector outVector = new DenseVector(trained_spells.Count, 0.0f);
+                DenseVector outVector = new DenseVector(trained_spells.Count, 0);
                 // set the correct output index to 1.0
-                outVector[i, 0] = 1.0f;
+                outVector[i, 0] = 1 ;
 
                 // for all equal training data, add one column
                 foreach (var item in trained_spells[i].TrainData)
@@ -284,6 +276,7 @@ namespace SchoolOfMagic
             isTesting = true;
             todoTextBlock.Text = "draw a spell in the window.";
             newSpellButton.IsEnabled = false;
+            currentTrainingPoints.Clear();
         }
     }
 }

@@ -83,14 +83,15 @@ namespace MathNumericsStripped
 
         public Matrix Subtract(Matrix toSubtract)
         {
+            Matrix res = new Matrix(this.Height, this.Width);
             for (int i = 0; i < Height; i++)
             {
                 for (int j = 0; j < Width; j++)
                 {
-                    _data[i,j] -= toSubtract[i,j];
+                    res[i, j] = this[i, j] - toSubtract[i, j];
                 }
             }
-            return this;
+            return res;
         }
 
         public Matrix SetSubMatrix(int rowIndex, int rowLength, int colIndex, int colLength, Matrix matrix)
@@ -125,26 +126,28 @@ namespace MathNumericsStripped
 
         public Matrix Multiply(float val)
         {
+            Matrix res = new Matrix(this.Height, this.Width);
             for (int i = 0; i < Height; i++)
             {
                 for (int j = 0; j < Width; j++)
                 {
-                    _data[i, j] *= val;
+                    res[i, j] = this[i,j] * val;
                 }
             }
-            return this;
+            return res;
         }
 
         public Matrix Add(Matrix toAdd)
         {
+            Matrix res = new Matrix(this.Height, this.Width);
             for (int i = 0; i < Height; i++)
             {
                 for (int j = 0; j < Width; j++)
                 {
-                    _data[i,j] += toAdd[i, j];
+                    res[i, j] = this[i,j] + toAdd[i, j];
                 }
             }
-            return this;
+            return res;
         }
 
         public Matrix SubMatrix(int rowIndex, int rowLength, int colIndex, int colLength)
@@ -196,7 +199,7 @@ namespace MathNumericsStripped
 
             for (int i = 0; i < Height; i++)
             {
-                res[i, 0] = this[i, 0];
+                res[i, 0] = this[i, num];
             }
             return res;
         }
@@ -209,13 +212,14 @@ namespace MathNumericsStripped
             }
         }
 
-        public Matrix PointwiseMultiply(Matrix res)
+        public Matrix PointwiseMultiply(Matrix multWith)
         {
+            Matrix res = new Matrix(this.Height, this.Width);
             for (int i = 0; i < Height; i++)
             {
                 for (int j = 0; j < Width; j++)
                 {
-                    res[i, j] *= this[i, j];
+                    res[i, j] = multWith[i,j] * this[i, j];
                 }
             }
             return res;
@@ -244,6 +248,20 @@ namespace MathNumericsStripped
             {
                 this[i, num] = vector[i,0];
             }
+        }
+
+        public Matrix Sign()
+        {
+            Matrix res = new Matrix(this.Height, this.Width);
+
+            for (int i = 0; i < Height; i++)
+            {
+                for (int j = 0; j < Width; j++)
+                {
+                    res[i, j] = Math.Sign(this[i, j]);
+                }
+            }
+            return res;
         }
     }
 }

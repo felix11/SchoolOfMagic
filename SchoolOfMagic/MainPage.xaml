@@ -9,8 +9,7 @@
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" PointerMoved="Grid_PointerMoved_1" PointerPressed="Grid_PointerPressed_1" PointerReleased="Grid_PointerReleased_1">
         <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="510" Margin="498,128,0,0" VerticalAlignment="Top" Width="676" Background="#FF142246">
-            <Button x:Name="saveButton" Content="Save" Canvas.Left="-222" Width="170" Canvas.Top="47" Click="saveButton_Click"/>
-            <Image x:Name="testimage" Width="666" Height="500" Source="img/pixel.png"/>
+            <Button x:Name="saveButton" Content="Save" Canvas.Left="-222" Width="170" Canvas.Top="47" Click="saveButton_Click" IsEnabled="False"/>
         </Canvas>
         <Button x:Name="newSpellButton" Content="New spell" HorizontalAlignment="Left" Margin="277,60,0,0" VerticalAlignment="Top" Width="173" Click="newSpellButton_Click"/>
         <TextBox x:Name="newSpellNameTextBox" HorizontalAlignment="Left" Margin="455,61,0,0" TextWrapping="Wrap" Text="spellname" VerticalAlignment="Top" Width="162"/>

@@ -20,12 +20,12 @@ namespace RecognitionLib
         /// </summary>
         /// <param name="inputBmp"></param>
         /// <returns>a Row*Col X 1 matrix containing the bitmap pixel</returns>
-        public static Matrix List2Pattern(int width, int height, List<Point> list)
+        public static Matrix List2Pattern(int height, int width, List<Point> list)
         {
-            float thickness =30f;
-            int sampleLen = 30;
+            double thickness = 3.0f;
+            double sampleLen = 10;
             // create the correct bitmap array
-            Matrix result = new DenseMatrix(height, width, 0.0f);
+            Matrix resultVec = new DenseMatrix(height * width, 1, 0);
             foreach (var item in list)
             {
                 // generate a cirular pattern around each point, with rad = thickness
@@ -33,27 +33,15 @@ namespace RecognitionLib
                 {
                     for (int rad = 0; rad < sampleLen; rad++)
                     {
-                        int x = (int)(item.X + Math.Cos(phi / sampleLen * 2 * Math.PI) * rad / (double)sampleLen * thickness);
-                        int y = (int)(item.Y + Math.Sin(phi / sampleLen * 2 * Math.PI) * rad / (double)sampleLen * thickness);
+                        int x = (int)(item.X + Math.Cos(phi / sampleLen * 2 * Math.PI) * rad / sampleLen * thickness);
+                        int y = (int)(item.Y + Math.Sin(phi / sampleLen * 2 * Math.PI) * rad / sampleLen * thickness);
 
                         if (x >= 0 && x < width && y >= 0 && y < height)
                         {
-                            result[y, x] = 1.0f;
+                            resultVec[y * width + x, 0] = 1;
                         }
                     }
                 }
-            }
-
-
-
-            // and transform it to a single column vector
-            Matrix resultVec = new DenseMatrix(height * width, 1, 0.0f);
-            for (int i = 0; i < height; i++)
-            {
-                for (int k = 0; k < width; k++)
-			    {
-                    resultVec[i * width + k,0] = result[i, k];
-			    }
             }
 
             return resultVec;

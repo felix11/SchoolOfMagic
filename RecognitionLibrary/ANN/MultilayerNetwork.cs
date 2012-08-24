@@ -98,7 +98,7 @@ namespace RecognitionLib.ANN
             {
                 forwardPass(pat);
                 backwardPass(pat, targets);
-                weightUpdate(pat, dw, dv);
+                weightUpdate(pat, dw, dv, targets);
             }
         }
 
@@ -156,7 +156,7 @@ namespace RecognitionLib.ANN
         /// <param name="pat">input pattern</param>
         /// <param name="dw">delta w, from last updates. Used to update weights1 after recalculation.</param>
         /// <param name="dv">delta v, from last updates. Used to update weights2 after recalculation.</param>
-        private void weightUpdate(Matrix pat, Matrix dw, Matrix dv)
+        private void weightUpdate(Matrix pat, Matrix dw, Matrix dv, Matrix targets)
         {
             /*
                 % weight update, MATLAB code
@@ -175,6 +175,10 @@ namespace RecognitionLib.ANN
 
             weights1 += dw.Multiply(eta).Multiply(1 + DataManipulation.rand(1, 1)[0, 0] / 1000f);
             weights2 += dv.Multiply(eta).Multiply(1 + DataManipulation.rand(1, 1)[0, 0] / 1000f);
+
+            Matrix e1 = (net_out.Sign() - targets).Multiply(0.5f).Multiply(new DenseMatrix(net_out.ColumnCount, 1, 1.0f)).Transpose().Multiply(new DenseMatrix(net_out.RowCount, 1, 1.0f));
+            double e = e1[0, 0];
+            e = e;
         }
 
         /// <summary>

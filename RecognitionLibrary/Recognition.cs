@@ -82,6 +82,5 @@ namespace RecognitionLibrary
 
             return result;
         }
-
     }
 }

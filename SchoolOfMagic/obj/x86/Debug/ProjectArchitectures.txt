@@ -1,4 +1,4 @@
-c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\MathNumericsStripped\MathNumericsStripped.csproj;x86
-c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\MathNumericsStripped\MathNumericsStripped.csproj;x86
-c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\RecognitionLibrary\RecognitionLibrary.csproj;x86
-c:\users\felix\documents\visual studio 2012\Projects\SchoolOfMagic\SchoolOfMagic\SchoolOfMagic.csproj;x86
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\MathNumericsStripped\MathNumericsStripped.csproj;x86
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\MathNumericsStripped\MathNumericsStripped.csproj;x86
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\RecognitionLibrary.csproj;x86
+C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\SchoolOfMagic.csproj;x86
