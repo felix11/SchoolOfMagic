@@ -22,8 +22,45 @@ namespace RecognitionLibrary
         /// <param name="patternSize">The size of one input pattern.</param>
         public Recognition(int inputSize, int outputSize)
         {
+            initMLN(inputSize, outputSize);
+        }
+
+        /// <summary>
+        /// parameterless constructor for serialization
+        /// </summary>
+        public Recognition()
+        {
+        }
+
+        /// <summary>
+        /// init the multilayer network with sizes.
+        /// </summary>
+        /// <param name="inputSize"></param>
+        /// <param name="outputSize"></param>
+        public void initMLN(int inputSize, int outputSize)
+        {
             this.patternSize = inputSize;
             mln = new MultilayerNetwork(HIDDEN_NODES, patternSize, outputSize);
+        }
+
+        /// <summary>
+        /// set the weights publicly. used for save/load.
+        /// </summary>
+        /// <param name="w1"></param>
+        /// <param name="w2"></param>
+        public void setWeights(Matrix w1, Matrix w2)
+        {
+            mln.setWeights(w1, w2);
+        }
+
+        /// <summary>
+        /// get the weights
+        /// </summary>
+        /// <param name="w1"></param>
+        /// <param name="w2"></param>
+        public Tuple<Matrix, Matrix> getWeights()
+        {
+            return new Tuple<Matrix, Matrix>(mln.Weights1, mln.Weights2);
         }
         
         /// <summary>

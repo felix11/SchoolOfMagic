@@ -16,33 +16,33 @@
     <AppXManifest Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-08-23T23:09:27.076</Modified>
+      <Modified>2012-08-24T03:45:02.487</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\SchoolOfMagic.exe">
       <PackagePath>SchoolOfMagic.exe</PackagePath>
-      <Modified>2012-08-24T02:33:44.171</Modified>
+      <Modified>2012-08-24T04:20:45.004</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\SchoolOfMagic.pdb">
       <PackagePath>SchoolOfMagic.pdb</PackagePath>
-      <Modified>2012-08-24T02:33:44.156</Modified>
+      <Modified>2012-08-24T04:20:44.985</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\MathNumericsStripped\bin\x86\Debug\MathNumericsStripped.pdb">
       <PackagePath>MathNumericsStripped.pdb</PackagePath>
-      <Modified>2012-08-24T01:49:10.140</Modified>
+      <Modified>2012-08-24T03:18:24.837</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.pdb">
       <PackagePath>RecognitionLibrary.pdb</PackagePath>
-      <Modified>2012-08-24T02:27:34.013</Modified>
+      <Modified>2012-08-24T04:20:44.355</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\MathNumericsStripped\bin\x86\Debug\MathNumericsStripped.dll">
       <PackagePath>MathNumericsStripped.dll</PackagePath>
-      <Modified>2012-08-24T01:49:10.155</Modified>
+      <Modified>2012-08-24T03:18:24.853</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.dll">
       <PackagePath>RecognitionLibrary.dll</PackagePath>
-      <Modified>2012-08-24T02:27:34.028</Modified>
+      <Modified>2012-08-24T04:20:44.373</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
@@ -86,7 +86,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\MainPage.xaml">
       <PackagePath>MainPage.xaml</PackagePath>
-      <Modified>2012-08-23T23:03:45.660</Modified>
+      <Modified>2012-08-24T04:00:54.277</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

@@ -22,7 +22,7 @@ namespace RecognitionLib
         /// <returns>a Row*Col X 1 matrix containing the bitmap pixel</returns>
         public static Matrix List2Pattern(int height, int width, List<Point> list)
         {
-            double thickness = 3.0f;
+            double thickness = 5.0f;
             double sampleLen = 10;
             // create the correct bitmap array
             Matrix resultVec = new DenseMatrix(height * width, 1, 0);

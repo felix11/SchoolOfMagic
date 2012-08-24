@@ -18,6 +18,10 @@ using Windows.UI.Xaml.Media.Imaging;
 using RecognitionLibrary;
 using System.Collections.ObjectModel;
 using MathNumericsStripped;
+using System.Xml.Serialization;
+using Windows.Storage.Pickers;
+using System.Text;
+using Windows.Storage;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,7 +34,6 @@ namespace SchoolOfMagic
     {
         private bool isDrawing;
         private bool isTraining = false;
-        private bool isTesting = false;
         private Color backgroundColor = Color.FromArgb(255, 0, 0, 0);
         private List<Rectangle> drawnRectangles = new List<Rectangle>();
         private Image star;
@@ -43,9 +46,9 @@ namespace SchoolOfMagic
 
         private const double MIN_DIST = 5.0;
         private const int MAX_SPELLS = 15;
-        private const int INPUT_WIDTH = 25;
-        private const int INPUT_HEIGHT = 25;
-        private const int START_TRAIN_COUNTER = 6;
+        private const int INPUT_WIDTH = 50;
+        private const int INPUT_HEIGHT = 50;
+        private const int START_TRAIN_COUNTER = 5;
 
         public MainPage()
         {
@@ -142,6 +145,7 @@ namespace SchoolOfMagic
             // TODO: check if pointer was pressed for a longer time
             isDrawing = true;
             lastPoint = e.GetCurrentPoint(canvas).Position;
+            currentTrainingPoints.Clear();
         }
 
         private void removeRects()
@@ -176,8 +180,7 @@ namespace SchoolOfMagic
                     todoTextBlock.Text = "train your spell. Trainings left: " + trainCounter;
                 }
             }
-            else
-            if (isTesting)
+            else if(recognition != null)
             {
                 // convert pattern to matrix
                 MathNumericsStripped.Matrix current_spelldata = DataManipulation.List2Pattern(INPUT_WIDTH, INPUT_HEIGHT, currentTrainingPoints);
@@ -205,9 +208,70 @@ namespace SchoolOfMagic
             isDrawing = false;
         }
 
-        private void saveButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Helper function, serializes an object into an xml string.
+        /// credit: http://social.msdn.microsoft.com/Forums/en-US/csharplanguage/thread/5d08bc28-5b61-4c5a-8c4b-4665b1c929ea/
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static string SerializeToString(object obj)
         {
+            XmlSerializer serializer = new XmlSerializer(obj.GetType());
 
+            using (StringWriter writer = new StringWriter())
+            {
+                serializer.Serialize(writer, obj);
+
+                return writer.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Get a serialized object back.
+        /// credit: http://social.msdn.microsoft.com/Forums/en-US/csharplanguage/thread/5d08bc28-5b61-4c5a-8c4b-4665b1c929ea/
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="xml"></param>
+        /// <returns></returns>
+        public static T SerializeFromString<T>(string xml)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+
+            using (StringReader reader = new StringReader(xml))
+            {
+                return (T)serializer.Deserialize(reader);
+            }
+        }
+
+        private async void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            TrainData dataObj = new TrainData(recognition.getWeights(), trained_spells);
+            string toSave = dataObj.ToString();
+
+            // get file pickers and store the file
+            FileSavePicker fsp = new FileSavePicker();
+            fsp.DefaultFileExtension = ".spells";
+            fsp.FileTypeChoices.Add("Spells", new List<string>() { ".spells" });
+            StorageFile sf = await fsp.PickSaveFileAsync();
+            await Windows.Storage.FileIO.WriteTextAsync(sf, toSave);
+        }
+
+        private async void loadButton_Click(object sender, RoutedEventArgs e)
+        {
+            // open the file with the picker
+            FileOpenPicker fop = new FileOpenPicker();
+            fop.FileTypeFilter.Add(".spells");
+            StorageFile sf = await fop.PickSingleFileAsync();
+
+            // read the file
+            string text = await Windows.Storage.FileIO.ReadTextAsync(sf);
+            // create train data
+            TrainData td = TrainData.FromString(text);
+
+            // deserialize the data
+            trained_spells = td.Trained_Spells;
+            recognition = new Recognition(INPUT_WIDTH * INPUT_HEIGHT, trained_spells.Count);
+            recognition.setWeights(td.Weights.Item1, td.Weights.Item2);
         }
 
         private void newSpellButton_Click(object sender, RoutedEventArgs e)
@@ -243,6 +307,7 @@ namespace SchoolOfMagic
         private void trainButton_Click(object sender, RoutedEventArgs e)
         {
             recognition = new Recognition(INPUT_WIDTH * INPUT_HEIGHT, trained_spells.Count);
+            saveButton.IsEnabled = true;
 
             // generate train data
             List<ArrayInputData> trainData = new List<ArrayInputData>();
@@ -273,7 +338,6 @@ namespace SchoolOfMagic
 
         private void testSpellButton_Click(object sender, RoutedEventArgs e)
         {
-            isTesting = true;
             todoTextBlock.Text = "draw a spell in the window.";
             newSpellButton.IsEnabled = false;
             currentTrainingPoints.Clear();

@@ -263,5 +263,52 @@ namespace MathNumericsStripped
             }
             return res;
         }
+
+        public Matrix Copy()
+        {
+            Matrix res = new Matrix(this.Height, this.Width);
+
+            for (int i = 0; i < Height; i++)
+            {
+                for (int j = 0; j < Width; j++)
+                {
+                    res[i, j] = this[i, j];
+                }
+            }
+            return res;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < Height; i++)
+            {
+                for (int j = 0; j < Width; j++)
+                {
+                    sb.Append(this[i, j]);
+                    sb.Append(",");
+                }
+                sb.Append(";");
+            }
+            return sb.ToString();
+        }
+
+        public static Matrix FromString(string matrixStr)
+        {
+            string[] lines = matrixStr.Split(new char[]{';'},StringSplitOptions.RemoveEmptyEntries);
+            string[] firstLine = lines[0].Split(new char[]{','},StringSplitOptions.RemoveEmptyEntries);
+            Matrix res = new Matrix(lines.Length, firstLine.Length);
+            for (int i = 0; i < res.Height; i++)
+            {
+                string[] cline = lines[i].Split(new char[]{','},StringSplitOptions.RemoveEmptyEntries);
+                for (int j = 0; j < res.Width; j++)
+                {
+                    float rf = 0;
+                    float.TryParse(cline[j], out rf);
+                    res[i, j] = rf;
+                }
+            }
+            return res;
+        }
     }
 }

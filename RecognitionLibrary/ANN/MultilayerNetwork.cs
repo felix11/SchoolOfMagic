@@ -36,6 +36,22 @@ namespace RecognitionLib.ANN
             get { return weights2.RowCount; }
         }
 
+        public Matrix Weights1
+        {
+            get
+            {
+                return weights1.Copy();
+            }
+        }
+
+        public Matrix Weights2
+        {
+            get
+            {
+                return weights2.Copy();
+            }
+        }
+
         /// <summary>
         /// Weights between input and hidden layer.
         /// </summary>
@@ -73,6 +89,17 @@ namespace RecognitionLib.ANN
             this.weights2 = new DenseMatrix(targetsize, hiddenNodes + 1);
 
             randomize();
+        }
+
+        /// <summary>
+        /// public setter of the weights.
+        /// </summary>
+        /// <param name="w1">weights after input</param>
+        /// <param name="w2">weights after hidden layer</param>
+        public void setWeights(Matrix w1, Matrix w2)
+        {
+            weights1 = w1.Copy();
+            weights2 = w2.Copy();
         }
 
         /// <summary>
