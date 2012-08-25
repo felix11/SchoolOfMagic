@@ -85,7 +85,7 @@ namespace SchoolOfMagic
 
                 if (dist(p, lastPoint) > MIN_DIST)
                 {
-                    Point newP = new Point(p.X * INPUT_WIDTH / canvas.Width, p.Y * INPUT_HEIGHT / canvas.Height);
+                    Point newP = new Point(p.X * INPUT_WIDTH / canvas.ActualWidth, p.Y * INPUT_HEIGHT / canvas.ActualHeight);
                     currentTrainingPoints.Add(newP);
                     DrawCurve(p, lastPoint);
                     lastPoint = p;
@@ -170,9 +170,8 @@ namespace SchoolOfMagic
                 if (trainCounter == 0)
                 {
                     isTraining = false;
-                    newSpellNameTextBox.IsEnabled = true;
                     //DrawVec(aid.Value);
-                    trained_spells.Add(new TrainSet(newSpellNameTextBox.Text, currentTrainingData));
+                    trained_spells.Add(new TrainSet(newSpellNameTextBox.Text, newSpellDescriptionText.Text, currentTrainingData));
                     todoTextBlock.Text = "Congrats. You created a new spell.";
                 }
                 else
@@ -245,7 +244,7 @@ namespace SchoolOfMagic
 
         private async void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            TrainData dataObj = new TrainData(recognition.getWeights(), trained_spells);
+            TrainData dataObj = new TrainData(INPUT_HEIGHT, INPUT_WIDTH, recognition.getWeights(), trained_spells);
             string toSave = dataObj.ToString();
 
             // get file pickers and store the file
@@ -274,16 +273,30 @@ namespace SchoolOfMagic
             recognition.setWeights(td.NeuralNet.Item1, td.NeuralNet.Item2);
         }
 
-        private void newSpellButton_Click(object sender, RoutedEventArgs e)
+        private async void newSpellButton_Click(object sender, RoutedEventArgs e)
         {
             if (!isTraining)
             {
-                trainCounter = START_TRAIN_COUNTER;
-                todoTextBlock.Text = "train your spell. Trainings left: " + trainCounter;
-                isTraining = true;
-                newSpellNameTextBox.IsEnabled = false;
-                currentTrainingData.Clear();
-                currentTrainingPoints.Clear();
+                FileOpenPicker fop = new FileOpenPicker();
+                fop.FileTypeFilter.Add(".png");
+
+                StorageFile sf = await fop.PickSingleFileAsync();
+
+                if (sf != null)
+                {
+                    string filename = sf.DisplayName;
+                    newSpellNameTextBox.Text = filename;
+                    Image img = new Image();
+                    Uri ur = new Uri("ms-appx:///img/" + sf.Name);
+                    (canvas.Background as ImageBrush).ImageSource = new BitmapImage(ur);
+                    canvas.UpdateLayout();
+
+                    trainCounter = START_TRAIN_COUNTER;
+                    todoTextBlock.Text = "train your spell. Trainings left: " + trainCounter;
+                    isTraining = true;
+                    currentTrainingData.Clear();
+                    currentTrainingPoints.Clear();
+                }
             }
             else
             {

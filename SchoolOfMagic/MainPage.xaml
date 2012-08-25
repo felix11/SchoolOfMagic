@@ -8,12 +8,15 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" PointerMoved="Grid_PointerMoved_1" PointerPressed="Grid_PointerPressed_1" PointerReleased="Grid_PointerReleased_1">
-        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="510" Margin="498,128,0,0" VerticalAlignment="Top" Width="676" Background="#FF142246">
+        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="512" Margin="498,128,0,0" VerticalAlignment="Top" Width="512">
+            <Canvas.Background>
+                <ImageBrush ImageSource="Assets/Logo.png"/>
+            </Canvas.Background>
             <Button x:Name="saveButton" Content="Save" Canvas.Left="-222" Width="170" Canvas.Top="47" Click="saveButton_Click" IsEnabled="False"/>
             <Button x:Name="loadButton" Content="Load" Canvas.Left="-222" Width="170" Canvas.Top="90" Click="loadButton_Click"/>
         </Canvas>
         <Button x:Name="newSpellButton" Content="New spell" HorizontalAlignment="Left" Margin="277,60,0,0" VerticalAlignment="Top" Width="173" Click="newSpellButton_Click"/>
-        <TextBox x:Name="newSpellNameTextBox" HorizontalAlignment="Left" Margin="455,61,0,0" TextWrapping="Wrap" Text="spellname" VerticalAlignment="Top" Width="162"/>
+        <TextBox x:Name="newSpellNameTextBox" HorizontalAlignment="Left" Margin="46,60,0,0" TextWrapping="Wrap" Text="spellname" VerticalAlignment="Top" Width="197" IsEnabled="False"/>
         <ItemsControl ItemsSource="{Binding}" Margin="277,292,932,293" Width="157">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
@@ -21,8 +24,9 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <TextBlock x:Name="todoTextBlock" HorizontalAlignment="Left" Margin="767,61,0,0" TextWrapping="Wrap" Text="add a new spell!" VerticalAlignment="Top" Width="179" Style="{StaticResource BodyTextStyle}"/>
+        <TextBlock x:Name="todoTextBlock" HorizontalAlignment="Left" Margin="993,69,0,0" TextWrapping="Wrap" Text="add a new spell!" VerticalAlignment="Top" Width="179" Style="{StaticResource BodyTextStyle}"/>
         <Button x:Name="trainButton" Content="Train" HorizontalAlignment="Left" Margin="277,98,0,0" VerticalAlignment="Top" Width="173" Click="trainButton_Click"/>
         <Button x:Name="testSpellButton" Content="Test spell" HorizontalAlignment="Left" Margin="277,136,0,0" VerticalAlignment="Top" Width="173" Click="testSpellButton_Click" IsEnabled="False"/>
+        <TextBox x:Name="newSpellDescriptionText" HorizontalAlignment="Left" Margin="46,104,0,0" TextWrapping="Wrap" Text="description" VerticalAlignment="Top" Width="197" Height="271"/>
     </Grid>
 </Page>

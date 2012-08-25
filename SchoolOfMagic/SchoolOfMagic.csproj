@@ -100,17 +100,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\MathNumericsStripped\MathNumericsStripped.csproj">
-      <Project>{a6429c54-30c1-4ffb-a0d7-9a22b6b9f6b6}</Project>
-      <Name>MathNumericsStripped</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecognitionLibrary\RecognitionLibrary.csproj">
-      <Project>{9f1ab0fb-e753-4700-9a1d-2af1e3cb4dd0}</Project>
-      <Name>RecognitionLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -130,9 +119,16 @@
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
+    <Content Include="img\Juv.png" />
+    <Content Include="img\Ko.png" />
+    <Content Include="img\Lai.png" />
+    <Content Include="img\Mi.png" />
+    <Content Include="img\Rah.png" />
     <Content Include="img\star_red.png" />
     <Content Include="img\pixel.png" />
     <Content Include="img\star.png" />
+    <Content Include="img\Yuh.png" />
+    <Content Include="img\Zik.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -147,6 +143,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MathNumericsStripped\MathNumericsStripped.csproj">
+      <Project>{a6429c54-30c1-4ffb-a0d7-9a22b6b9f6b6}</Project>
+      <Name>MathNumericsStripped</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RecognitionLibrary\RecognitionLibrary.csproj">
+      <Project>{9f1ab0fb-e753-4700-9a1d-2af1e3cb4dd0}</Project>
+      <Name>RecognitionLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

@@ -19,16 +19,16 @@
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\SchoolOfMagic.pdb">
       <PackagePath>SchoolOfMagic.pdb</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\MathNumericsStripped\bin\x86\Debug\MathNumericsStripped.pdb">
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\MathNumericsStripped\bin\x86\Debug\MathNumericsStripped.pdb">
       <PackagePath>MathNumericsStripped.pdb</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.pdb">
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.pdb">
       <PackagePath>RecognitionLibrary.pdb</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\MathNumericsStripped\bin\x86\Debug\MathNumericsStripped.dll">
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\MathNumericsStripped\bin\x86\Debug\MathNumericsStripped.dll">
       <PackagePath>MathNumericsStripped.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.dll">
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.dll">
       <PackagePath>RecognitionLibrary.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\Assets\Logo.png">
@@ -47,6 +47,21 @@
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\img\Juv.png">
+      <PackagePath>img\Juv.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\img\Ko.png">
+      <PackagePath>img\Ko.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\img\Lai.png">
+      <PackagePath>img\Lai.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\img\Mi.png">
+      <PackagePath>img\Mi.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\img\Rah.png">
+      <PackagePath>img\Rah.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\img\star_red.png">
       <PackagePath>img\star_red.png</PackagePath>
     </AppxPackagedFile>
@@ -55,6 +70,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\img\star.png">
       <PackagePath>img\star.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\img\Yuh.png">
+      <PackagePath>img\Yuh.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\img\Zik.png">
+      <PackagePath>img\Zik.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
