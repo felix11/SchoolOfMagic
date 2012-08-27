@@ -22,11 +22,11 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\SchoolOfMagic.exe">
       <PackagePath>SchoolOfMagic.exe</PackagePath>
-      <Modified>2012-08-25T00:34:43.940</Modified>
+      <Modified>2012-08-26T19:14:12.603</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\bin\x86\Debug\SchoolOfMagic.pdb">
       <PackagePath>SchoolOfMagic.pdb</PackagePath>
-      <Modified>2012-08-25T00:34:43.922</Modified>
+      <Modified>2012-08-26T19:14:12.585</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\MathNumericsStripped\bin\x86\Debug\MathNumericsStripped.pdb">
       <PackagePath>MathNumericsStripped.pdb</PackagePath>
@@ -34,7 +34,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.pdb">
       <PackagePath>RecognitionLibrary.pdb</PackagePath>
-      <Modified>2012-08-25T00:16:17.886</Modified>
+      <Modified>2012-08-26T19:14:11.545</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\MathNumericsStripped\bin\x86\Debug\MathNumericsStripped.dll">
       <PackagePath>MathNumericsStripped.dll</PackagePath>
@@ -42,7 +42,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\RecognitionLibrary\bin\x86\Debug\RecognitionLibrary.dll">
       <PackagePath>RecognitionLibrary.dll</PackagePath>
-      <Modified>2012-08-25T00:16:17.904</Modified>
+      <Modified>2012-08-26T19:14:11.563</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Felix\Documents\Projects\SchoolOfMagic\SchoolOfMagic\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>

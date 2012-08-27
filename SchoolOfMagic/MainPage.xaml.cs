@@ -171,7 +171,7 @@ namespace SchoolOfMagic
                 {
                     isTraining = false;
                     //DrawVec(aid.Value);
-                    trained_spells.Add(new TrainSet(newSpellNameTextBox.Text, newSpellDescriptionText.Text, currentTrainingData));
+                    trained_spells.Add(new TrainSet(newSpellNameTextBox.Text, newSpellDescriptionText.Text, newSpellNameTextBox.Text + ".png", currentTrainingData));
                     todoTextBlock.Text = "Congrats. You created a new spell.";
                 }
                 else
